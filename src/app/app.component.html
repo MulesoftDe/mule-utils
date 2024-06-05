@@ -1,0 +1,44 @@
+<h1>{{ title }}</h1>
+<mat-form-field appearance="fill">
+  <mat-label>Environnement</mat-label>
+  <mat-select (selectionChange)="refreshData()" [(value)]="selectedEnvironment">
+    <mat-option *ngFor="let env of envirennementOptions" [value]="env">
+      {{ env.label }}
+    </mat-option>
+  </mat-select>
+</mat-form-field>
+
+<table class="mat-elevation-z8">
+  <thead>
+  <tr>
+    <th class="mat-header-cell">ID</th>
+    <th class="mat-header-cell">Name</th>
+    <th class="mat-header-cell">Status</th>
+    <th class="mat-header-cell">Provider</th>
+    <th class="mat-header-cell">Target ID</th>
+    <th class="mat-header-cell">Application Status</th>
+    <th class="mat-header-cell">Desired State</th>
+    <th class="mat-header-cell">Group ID</th>
+    <th class="mat-header-cell">Artifact ID</th>
+    <th class="mat-header-cell">Version</th>
+    <th class="mat-header-cell">Packaging</th>
+    <th class="mat-header-cell">Desired Version</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let app of detail" class="mat-row">
+    <td class="mat-cell">{{ app.id }}</td>
+    <td class="mat-cell">{{ app.name }}</td>
+    <td class="mat-cell">{{ app.status }}</td>
+    <td class="mat-cell">{{ app.target.provider }}</td>
+    <td class="mat-cell">{{ app.target.targetId }}</td>
+    <td class="mat-cell">{{ app.application.status }}</td>
+    <td class="mat-cell">{{ app.application.desiredState }}</td>
+    <td class="mat-cell">{{ app.application.ref.groupId }}</td>
+    <td class="mat-cell">{{ app.application.ref.artifactId }}</td>
+    <td class="mat-cell">{{ app.application.ref.version }}</td>
+    <td class="mat-cell">{{ app.application.ref.packaging }}</td>
+    <td class="mat-cell">{{ app.desiredVersion }}</td>
+  </tr>
+  </tbody>
+</table>

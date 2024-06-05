@@ -1,0 +1,7 @@
+{
+  "url": "https://anypoint.mulesoft.com/mocking/api/v1/sources/exchange/assets/f1e97bc6-315a-4490-82a7-23abe036327a.anypoint-platform/amc-application-manager/4.0.4/m/",
+  "clientId": "<CLIENT_ID from step 7>",
+  "clientSecret": "<CLIENT_SECRET from step 8>",
+  "tokenUrl": "https://anypoint.mulesoft.com/accounts/api/v2/oauth2/token"
+
+}
